@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <string>
 #include "Prompts.cpp"
 using namespace std;
 
@@ -25,5 +26,17 @@ class JournalEntry {
             cout << ">"; // Shows '>' or entry starting point, but dosen't save it to the entry.
             cin >> _userEntry;
             cout << "\n"; // Blank for spacing
+        }
+
+        string GetDateText(){
+            return _dateText;
+        }
+        
+        string GetPrompt(){
+            return _prompt;
+        }
+
+        string GetUserEntry(){
+            return _userEntry;
         }
 };

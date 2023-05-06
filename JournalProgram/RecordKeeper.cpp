@@ -3,15 +3,12 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include <string>
 #include "JournalEntry.cpp"
 using namespace std;
 
 class RecordKeeper {
   private:
     string _loadedLines[NULL];
-    JournalEntry entry;
-    string line;
 
  public:
     string SaveJournal(vector<JournalEntry> entries){
@@ -22,17 +19,17 @@ class RecordKeeper {
     ofstream myJournal;
     myJournal.open(fileName + ".txt", ios::in);
         
-        foreach (entry : entries){ 
+        for (JournalEntry entry : entries){ 
             // Entry date
-            myJournal << "Date: " entry._dateText " - ";
+            myJournal << "Date: " + entry.GetDateText() + " - ";
 
             // Entry prompt
-            myJournal << "Prompt: " entry._prompt "\n";
+            myJournal << "Prompt: " + entry.GetPrompt() + "\n";
 
             // User's Journal Entry
-            myJournal << entry._userEntry "\n\n";
+            myJournal << entry.GetUserEntry() + "\n\n";
         } 
-        myfile.close();
+        myJournal.close();
         
         return fileName;
     }
@@ -44,26 +41,34 @@ class RecordKeeper {
 
         ofstream myJournal;
         myJournal.open(fileName + ".txt");
-        while(!myJournal.eof)
-            getline(myJournal, _loadedLines);
+
+        for(int i = 0; i < 100; i++)
+			myJournal << _loadedLines[i];
+
+        for(int i = 0; i < 100; i++){
+			int j = i + 1;
+			cout << j << ": " << _loadedLines[i] << endl;
+		}
+        myJournal.close();
     }
 
      void DisplayJournal(vector<JournalEntry> entries){
-            if(_loadedLines != NULL){
-                foreach (line : _loadedLines)
-                {
-                    cout << line "\n";
-                }
+        if(_loadedLines != NULL){
+            for (string line : _loadedLines)
+            {
+                cout << line + "\n";
             }
-            foreach (entry : entries){
-            // Entry date
-            cout << "Date: " entry._dateText " - ";
+        }
+        for (JournalEntry entry : entries){
+        // Entry date
+        cout << "Date: " + entry.GetDateText() + " - ";
 
-            // Entry prompt
-            cout << "Prompt: " entry._prompt "\n";
+        // Entry prompt
+        cout << "Prompt: " + entry.GetPrompt() +"\n";
 
-            // User's Journal Entry
-            cout << entry._userEntry "\n\n";
+        // User's Journal Entry
+        cout << entry.GetUserEntry() + "\n\n";
         }
     } 
-}
+
+};

@@ -1,3 +1,9 @@
+#ifndef PROMPTS_CPP
+#define PROMPTS_CPP
+
+#ifndef JOURNALENTRY_CPP
+#define JOURNALENTRY_CPP
+
 #include <iostream>
 #include <vector>
 #include "Prompts.cpp"
@@ -24,7 +30,7 @@ int main() {
     if(userChoice == 1){ //Write
       JournalEntry myEntry;
       myEntry.WriteEntry();
-      entries.insert(myEntry);
+      entries.insert(entries.cend(),myEntry);
     }
 
     else if(userChoice == 2) //Display
