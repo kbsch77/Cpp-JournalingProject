@@ -1,9 +1,3 @@
-#ifndef PROMPTS_CPP
-#define PROMPTS_CPP
-
-#ifndef JOURNALENTRY_CPP
-#define JOURNALENTRY_CPP
-
 #include <iostream>
 #include <vector>
 #include "Prompts.cpp"

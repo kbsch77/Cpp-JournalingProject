@@ -1,3 +1,9 @@
+#ifndef PROMPTS_CPP
+#define PROMPTS_CPP
+
+#pragma once
+#endif  
+
 #include <iostream>
 #include <cstdlib>
 #include <vector>

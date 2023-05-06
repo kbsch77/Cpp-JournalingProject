@@ -1,3 +1,9 @@
+#ifndef JOURNALENTRY_CPP
+#define JOURNALENTRY_CPP
+
+#pragma once
+#endif 
+
 #include <iostream>
 #include <ctime>
 #include <string>
