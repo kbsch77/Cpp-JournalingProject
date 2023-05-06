@@ -29,7 +29,7 @@ class JournalEntry {
             cout << _prompt;
 
             // User's Journal Entry
-            cout << ">"; // Shows '>' or entry starting point, but dosen't save it to the entry.
+            cout << "> "; // Shows '>' or entry starting point, but dosen't save it to the entry.
             cin >> _userEntry;
             cout << "\n"; // Blank for spacing
         }

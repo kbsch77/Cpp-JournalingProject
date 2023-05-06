@@ -43,14 +43,14 @@ class Prompts {
 
         //meathod variables
         bool validity = false;
-        string userEntry = "6";
+        int userEntry;
 
         //Loop to ensure validity of menu prompt choice
         while(validity == false){
             cin >> userEntry;
 
             //Only allows users to enter in a number between 1-5
-            if (userEntry == "1" || userEntry == "2"|| userEntry == "3"|| userEntry == "4"|| userEntry == "5"){
+            if (userEntry == 1 || userEntry == 2|| userEntry == 3|| userEntry == 4|| userEntry == 5){
                 validity = true;
             }
             else cout << "Please enter a number of 1 through 5.\n";
