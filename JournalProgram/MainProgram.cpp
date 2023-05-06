@@ -31,6 +31,7 @@ int main() {
       myRecords.DisplayJournal(entries);
     
     else if(userChoice == 3) //Load
+    
       myRecords.LoadJournal();
     
     else if(userChoice == 4) //Save

@@ -17,7 +17,7 @@ class RecordKeeper {
     cin >> fileName;
         
     ofstream myJournal;
-    myJournal.open(fileName + ".txt", ios::in);
+    myJournal.open(fileName + ".txt");
         
         for (JournalEntry entry : entries){ 
             // Entry date
@@ -35,12 +35,13 @@ class RecordKeeper {
     }
 
      void LoadJournal(){
+        cout << "(Work In Progress) \n";
         cout << "Enter the name of your journal you want to load: ";
         string fileName;
         cin >> fileName;
 
         ofstream myJournal;
-        myJournal.open(fileName + ".txt");
+        myJournal.open(fileName + ".txt", ios::in);
 
         for(int i = 0; i < 100; i++)
 			myJournal << _loadedLines[i];
