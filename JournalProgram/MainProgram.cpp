@@ -1,5 +1,8 @@
 #include <iostream>
 #include <vector>
+#include "Prompts.cpp"
+#include "JournalEntry.cpp"
+#include "RecordKeeper.cpp"
 using namespace std;
 
 int main() {
@@ -21,7 +24,7 @@ int main() {
     if(userChoice == 1){ //Write
       JournalEntry myEntry;
       myEntry.WriteEntry();
-      entries.Add(myEntry);
+      entries.insert(myEntry);
     }
 
     else if(userChoice == 2) //Display

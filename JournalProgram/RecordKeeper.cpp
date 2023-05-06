@@ -4,14 +4,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "JournalEntry.cpp"
 using namespace std;
 
-class Prompts {
+class RecordKeeper {
   private:
-  string _loadedLines[NULL];
+    string _loadedLines[NULL];
+    JournalEntry entry;
+    string line;
 
  public:
-  string SaveJournal(vector<JournalEntry> entries){
+    string SaveJournal(vector<JournalEntry> entries){
     string fileName;
     cout << "Enter the name of your journal: "; 
     cin >> fileName;
@@ -19,7 +22,7 @@ class Prompts {
     ofstream myJournal;
     myJournal.open(fileName + ".txt", ios::in);
         
-        foreach (JournalEntry entry in entries){ 
+        foreach (entry : entries){ 
             // Entry date
             myJournal << "Date: " entry._dateText " - ";
 
@@ -47,12 +50,12 @@ class Prompts {
 
      void DisplayJournal(vector<JournalEntry> entries){
             if(_loadedLines != NULL){
-                foreach (string line : _loadedLines)
+                foreach (line : _loadedLines)
                 {
                     cout << line "\n";
                 }
             }
-            foreach (JournalEntry entry in entries){
+            foreach (entry : entries){
             // Entry date
             cout << "Date: " entry._dateText " - ";
 
