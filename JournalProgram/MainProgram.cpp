@@ -17,7 +17,7 @@ int main() {
 
   
   // Runs the Program in a loop untill quit option is selected
-  do{
+  while (userChoice != 5){
     // Gives and gets user choices
     userChoice = myPrompts.GiveUserOptions();
 
@@ -42,5 +42,5 @@ int main() {
     else
       cout << "Please enter a number of 1 through 5.\n";
 
-  } while (userChoice != 5);
+  }
 }

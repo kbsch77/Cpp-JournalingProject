@@ -55,8 +55,7 @@ class Prompts {
             }
             else cout << "Please enter a number of 1 through 5.\n";
         }
-        int userChoice;
-        cin >> userChoice;
-        return userChoice;
+        
+        return userEntry;
     }
 };
